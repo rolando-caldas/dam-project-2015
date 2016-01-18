@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+    DAM Project 2015
+    https://github.com/rolando-caldas/dam-project-2015
+
+    copyright 2015 Rolando Caldas Sánchez
+    license   http://opensource.org/licenses/MIT MIT license
+-->
+<html ng-app="mobileApp">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://api.demosonline.org:8080 data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Transporte APP</title>
+    </head>
+    <body>
+        <!-- Área gestionada por el controlador de nuestra app scanCtrl --->
+        <header class="bg-primary row" ng-controller="scanCtrl">
+            <div class="col-xs-9"><h1>Transporte APP</h1></div>
+            <div class="col-xs-3">
+                <div class="h1 fa fa-qrcode col-xs-3" id="scanButon" ng-click="runScan()"></div>
+            </div> 
+        </header>
+        <div class="container">
+            <!-- Área gestionada por el controlador de nuestra app enviosCtrl --->
+            <div ng-controller="enviosCtrl">
+                <div ng-hide="hide">                
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Destinatario</th>
+                            <th> </th>
+                        </tr>
+                        <tr ng-repeat="envio in envios">
+                            <td>
+                                {{ envio.destinatario}}
+                                <br /><br />
+                                {{ envio.direccion}}
+                            </td>
+                            <td><button class="btn btn-default fa fa-truck pull-right" ng-click="activaEntrega(envio.id)">Entregar</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- Área gestionada por el controlador de nuestra app entregaCtrl --->
+            <div ng-controller="entregaCtrl">
+                <div ng-hide="hide">
+                    <form novalidate="novalidate">
+                        <div class="clearfix">
+                            <div class="btn-group">
+                                <button class="btn btn-default fa fa-floppy-o" type="button" ng-click="enviar()">Enviar</button>
+                                <button class="btn btn-default fa fa-times" type="button" ng-click="cancelar()">Volver</button>
+                                <button class="btn btn-default fa fa-refresh" type="button" ng-click="clear()">Limpiar</button>
+                            </div>
+                        </div>
+                        <input type="hidden" name="envio" value="{{entrega}}">
+                        <div class="form-group">
+                            <input type="checkbox" id="cerrarEnvio" value="1" class="hidden">
+                            <label class="fa fa-square-o" for="cerrarEnvio">Paquete entregado</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="observaciones">Observaciones</label>
+                            <textarea id="observaciones" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="firmaArea">Firma</label>
+                            <div id="firma">
+                                <canvas id="firmaArea"></canvas>
+                            </div>
+                        </div>
+                    </form>
+                    {{ entrega.destinatario}}    
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>  
+        <script type="text/javascript" src="js/signature_pad.min.js"></script>
+        <script type="text/javascript" src="js/config.js"></script>
+        <script src="bower_components/angular/angular.js"></script>   
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+Server Software:        WSGIServer/0.1
+Server Hostname:        api.demosonline.org
+Server Port:            8080
+
+Document Path:          /cliente.json
+Document Length:        58 bytes
+
+Concurrency Level:      10
+Time taken for tests:   75.619 seconds
+Complete requests:      5000
+Failed requests:        0
+Non-2xx responses:      5000
+Total transferred:      1370000 bytes
+HTML transferred:       290000 bytes
+Requests per second:    66.12 [#/sec] (mean)
+Time per request:       151.239 [ms] (mean)
+Time per request:       15.124 [ms] (mean, across all concurrent requests)
+Transfer rate:          17.69 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       53   75  83.3     62    1345
+Processing:    54   76  42.3     69     417
+Waiting:       54   75  42.2     67     417
+Total:        110  151  95.6    131    1412
+
+Percentage of the requests served within a certain time (ms)
+  50%    131
+  66%    135
+  75%    138
+  80%    141
+  90%    150
+  95%    196
+  98%    436
+  99%    468
+ 100%   1412 (longest request)

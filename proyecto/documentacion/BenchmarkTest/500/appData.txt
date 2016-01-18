@@ -1,0 +1,49 @@
+This is ApacheBench, Version 2.3 <$Revision: 1638069 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking app.demosonline.org (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Finished 500 requests
+
+
+Server Software:        Apache/2.4.10
+Server Hostname:        app.demosonline.org
+Server Port:            80
+
+Document Path:          /cliente
+Document Length:        392 bytes
+
+Concurrency Level:      10
+Time taken for tests:   51.877 seconds
+Complete requests:      500
+Failed requests:        0
+Non-2xx responses:      500
+Total transferred:      521424 bytes
+HTML transferred:       196000 bytes
+Requests per second:    9.64 [#/sec] (mean)
+Time per request:       1037.534 [ms] (mean)
+Time per request:       103.753 [ms] (mean, across all concurrent requests)
+Transfer rate:          9.82 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       56   80 113.5     62    1061
+Processing:    71  931 2200.3     84   17106
+Waiting:       70  930 2200.4     84   17106
+Total:        131 1011 2203.0    146   17169
+
+Percentage of the requests served within a certain time (ms)
+  50%    146
+  66%    154
+  75%    454
+  80%   1156
+  90%   3141
+  95%   5159
+  98%   8288
+  99%  12164
+ 100%  17169 (longest request)

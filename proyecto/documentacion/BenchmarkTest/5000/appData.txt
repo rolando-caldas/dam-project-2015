@@ -1,0 +1,37 @@
+Server Software:        Apache/2.4.10
+Server Hostname:        app.demosonline.org
+Server Port:            80
+
+Document Path:          /cliente
+Document Length:        392 bytes
+
+Concurrency Level:      10
+Time taken for tests:   293.626 seconds
+Complete requests:      4000
+Failed requests:        22
+   (Connect: 0, Receive: 0, Length: 22, Exceptions: 0)
+Non-2xx responses:      3978
+Total transferred:      4149304 bytes
+HTML transferred:       1559376 bytes
+Requests per second:    13.62 [#/sec] (mean)
+Time per request:       734.065 [ms] (mean)
+Time per request:       73.406 [ms] (mean, across all concurrent requests)
+Transfer rate:          13.80 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       53   70  70.1     61    1187
+Processing:    65  658 1942.6     82   31112
+Waiting:        0  655 1942.8     82   31112
+Total:        121  727 1947.1    144   31174
+
+Percentage of the requests served within a certain time (ms)
+  50%    144
+  66%    148
+  75%    157
+  80%    234
+  90%   2137
+  95%   3280
+  98%   8143
+  99%  10152
+ 100%  31174 (longest request)

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Rolando
+exec ./manage.py runserver 192.168.0.17:8080

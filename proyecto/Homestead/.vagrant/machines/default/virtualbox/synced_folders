@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/projects":{"type":null,"mount_opts":[],"guestpath":"/home/projects","hostpath":"/home/rolando/proyecto/webapp","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/rolando/proyecto/Homestead","disabled":false}}}

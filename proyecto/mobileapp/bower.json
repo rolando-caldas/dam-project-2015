@@ -1,0 +1,15 @@
+{
+  "name": "mobileapp",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "angular": "1.4.8",
+    "bootstrap": "3.3.5",
+    "font-awesome": "4.4.0"
+  },
+  "devDependencies": {}
+}
